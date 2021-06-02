@@ -1,0 +1,33 @@
+{
+  "name": "scroll-indicator",
+  "version": "1.0.0",
+  "description": "Component that render scroll indicators",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kvass-App/scroll-indicator.git"
+  },
+  "keywords": [
+    "scroll-indicator",
+    "kvass"
+  ],
+  "author": "lisbeth@kvass.no",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kvass-App/scroll-indicator/issues"
+  },
+  "homepage": "https://github.com/Kvass-App/scroll-indicator#readme",
+  "devDependencies": {
+    "cz-conventional-changelog": "^3.3.0",
+    "dotenv-cli": "^4.0.0",
+    "semantic-release-cli": "^5.4.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
