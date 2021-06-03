@@ -59,10 +59,8 @@ export default {
   methods: {
     calculate() {
       let target = this.$el.parentElement
-
       let sw = target.scrollWidth - target.clientWidth - this.treshold
       let sh = target.scrollHeight - target.clientHeight - this.treshold
-
       this.states.top = target.scrollTop >= this.treshold
       this.states.right = target.scrollLeft <= sw
       this.states.bottom = target.scrollTop <= sh
@@ -70,10 +68,8 @@ export default {
     },
     attachListeners(el) {
       if (!el) return
-
       el.addEventListener('scroll', this.calculate)
       this.calculate(el)
-
       this.observer = new MutationObserver(() => this.calculate(el))
       this.observer.observe(el, { childList: true, subtree: true })
     },
@@ -96,35 +92,28 @@ export default {
 .scroll-indicator {
   &__arrow {
     opacity: 1;
-
     color: #414141;
     border: 2px solid #e1e1e1;
     background-color: rgba(white, 0.9);
     display: flex;
     align-items: center;
     justify-content: center;
-
     width: 50px;
     height: 35px;
-
     position: absolute;
     pointer-events: none;
     z-index: 1;
-
     border-radius: 20px;
-
     animation: fadeIn 250ms ease-in-out;
-
+    transform-origin: center;
     @keyframes fadeIn {
       from {
         opacity: 0;
       }
     }
-
     svg {
       width: 0.375em;
       font-size: 40px;
-
       @keyframes fadeInOut {
         0%,
         100% {
@@ -134,10 +123,8 @@ export default {
           opacity: 1;
         }
       }
-
       animation: fadeInOut 2s ease-in-out infinite;
     }
-
     &--left {
       left: 0;
       top: 50%;
@@ -151,7 +138,7 @@ export default {
     &--bottom {
       right: 50%;
       bottom: 0;
-      transform: rotate(90deg) translate(-50%, 0);
+      transform: rotate(90deg) translate(50%, 50%);
     }
     &--top {
       right: 50%;
