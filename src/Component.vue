@@ -90,6 +90,8 @@ export default {
 
 <style lang="scss">
 .scroll-indicator {
+  $height: 35px;
+  $width: 50px;
   &__arrow {
     opacity: 1;
     color: #414141;
@@ -98,8 +100,8 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 35px;
+    width: $width;
+    height: $height;
     position: absolute;
     pointer-events: none;
     z-index: 1;
@@ -128,7 +130,7 @@ export default {
     &--left {
       left: 0;
       top: 50%;
-      transform: rotate(180deg) translate(0, 50%);
+      transform: rotate(180deg) translate(0, -50%);
     }
     &--right {
       right: 0;
@@ -136,14 +138,14 @@ export default {
       transform: rotate(0deg) translate(0, -50%);
     }
     &--bottom {
-      right: 50%;
+      right: calc(50% - #{$width - $height});
       bottom: 0;
-      transform: rotate(90deg) translate(50%, 50%);
+      transform: rotate(90deg) translate(0%, -50%);
     }
     &--top {
-      right: 50%;
+      right: calc(50% - #{$width - $height});
       top: 0;
-      transform: rotate(-90deg) translate(-50%, 0);
+      transform: rotate(-90deg) translate(0%, -50%);
     }
   }
 }
