@@ -1,11 +1,11 @@
 <template>
-  <div class="shop-scroll-indicator">
+  <div class="scroll-indicator">
     <template v-for="item in items">
       <slot name="indicator" :item="item">
         <div
           v-if="states[item.name]"
           :key="item.name"
-          :class="'shop-scroll-indicator__arrow shop-scroll-indicator__arrow--' + item.name"
+          :class="'scroll-indicator__arrow scroll-indicator__arrow--' + item.name"
         >
           <svg
             aria-hidden="true"
@@ -93,7 +93,7 @@ export default {
 </script>
 
 <style lang="scss">
-.shop-scroll-indicator {
+.scroll-indicator {
   &__arrow {
     opacity: 1;
 
