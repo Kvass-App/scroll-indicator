@@ -35,7 +35,7 @@ export default {
     },
     treshold: {
       type: Number,
-      default: 1,
+      default: 50,
     },
   },
   data() {
