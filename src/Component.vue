@@ -130,7 +130,7 @@ export default {
     &--left {
       left: 0;
       top: 50%;
-      transform: rotate(180deg) translate(0, -50%);
+      transform: rotate(180deg) translate(0, 50%);
     }
     &--right {
       right: 0;
