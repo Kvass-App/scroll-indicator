@@ -91,61 +91,72 @@ export default {
 <style lang="scss">
 .scroll-indicator {
   $height: 35px;
-  $width: 50px;
+  $width: 40px;
   &__arrow {
     opacity: 1;
     color: #414141;
-    border: 2px solid #e1e1e1;
+    border: 1px solid #e1e1e1;
     background-color: rgba(white, 0.9);
     display: flex;
     align-items: center;
     justify-content: center;
     width: $width;
     height: $height;
+    margin: (($width - $height) / 2) 0;
     position: absolute;
     pointer-events: none;
     z-index: 1;
-    border-radius: 20px;
+    border-radius: 20px 0 0 20px;
     animation: fadeIn 250ms ease-in-out;
     transform-origin: center;
+
     @keyframes fadeIn {
       from {
         opacity: 0;
       }
     }
+
     svg {
       width: 0.375em;
       font-size: 40px;
+
       @keyframes fadeInOut {
         0%,
         100% {
-          opacity: 0.3;
+          transform: translateX(-20%);
+          opacity: 0.4;
         }
         50% {
+          transform: translateX(20%);
           opacity: 1;
         }
       }
+
       animation: fadeInOut 2s ease-in-out infinite;
     }
+
     &--left {
       left: 0;
       top: 50%;
-      transform: rotate(180deg) translate(0, 50%);
+      transform: translate(0, -50%) rotate(180deg);
     }
+
     &--right {
       right: 0;
       top: 50%;
-      transform: rotate(0deg) translate(0, -50%);
+      transform: translate(0, -50%) rotate(0deg);
     }
+
     &--bottom {
-      right: calc(50% - #{$width - $height});
+      right: 50%;
       bottom: 0;
-      transform: rotate(90deg) translate(0%, -50%);
+      transform: translate(50%, 0%) rotate(90deg);
     }
+
     &--top {
-      right: calc(50% - #{$width - $height});
+      right: 50%;
       top: 0;
-      transform: rotate(-90deg) translate(0%, -50%);
+      transform: translate(50%, 0%) rotate(-90deg);
     }
   }
 }
